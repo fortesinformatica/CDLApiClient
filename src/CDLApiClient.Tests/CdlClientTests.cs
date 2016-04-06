@@ -1,4 +1,5 @@
-﻿using System.Configuration;
+﻿using System;
+using System.Configuration;
 using Flurl.Http.Testing;
 using NUnit.Framework;
 
@@ -28,6 +29,19 @@ namespace CDLApiClient.Tests
             _sut = new CdlClient();
             _httpTest.RespondWith(200, RETORNO_AUTENTICACAO);
             _httpTest.RespondWith(200, RETORNO_CONSULTA);
+        }
+
+        [TestCase("CdlClientId")]
+        [TestCase("CdlClientSecret")]
+        [TestCase("CdlUserName")]
+        [TestCase("CdlPassword")]
+        public void Construir(string key)
+        {
+            var value = ConfigurationManager.AppSettings.Get(key);
+            ConfigurationManager.AppSettings.Set(key, null);
+            var exception = Assert.Throws<ArgumentException>(() => _sut = new CdlClient());
+            Assert.AreEqual("As chaves CdlClientId, CdlClientSecret, CdlUserName e CdlPassword precisam ser configuradas.", exception.Message);
+            ConfigurationManager.AppSettings.Set(key, value);
         }
 
         [Test]
