@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CDLApiClient", "src\CDLApiClient\CDLApiClient.csproj", "{9255FDED-9BB5-4D82-AD0E-9649699344DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CDLApiClient.Tests", "src\CDLApiClient.Tests\CDLApiClient.Tests.csproj", "{946453D4-73C8-441D-8DCC-ECB23C64A76B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9255FDED-9BB5-4D82-AD0E-9649699344DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9255FDED-9BB5-4D82-AD0E-9649699344DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9255FDED-9BB5-4D82-AD0E-9649699344DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9255FDED-9BB5-4D82-AD0E-9649699344DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{946453D4-73C8-441D-8DCC-ECB23C64A76B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{946453D4-73C8-441D-8DCC-ECB23C64A76B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{946453D4-73C8-441D-8DCC-ECB23C64A76B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{946453D4-73C8-441D-8DCC-ECB23C64A76B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
