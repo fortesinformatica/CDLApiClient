@@ -57,5 +57,19 @@ namespace CDLApiClient.Tests
             _sut.ConsultaCpfCnpj("14052356322");
             _httpTest.ShouldHaveCalled("consulta").WithRequestBody("14052356322");
         }
+
+        [Test]
+        public async void ConsultaCpfCnpjAsyncDeveAutenticarPrimeiro()
+        {
+            await _sut.ConsultaCpfCnpjAsync("14052356322");
+            _httpTest.ShouldHaveCalled("oauth/access_token").WithRequestBody($"grant_type=password&client_id={_clientId}&client_secret={_clientSecret}&username={_userName}&password={_password}");
+        }
+
+        [Test]
+        public async void ConsultaCpfCnpjAsyncDeveConsultarCpfCnpj()
+        {
+            await _sut.ConsultaCpfCnpjAsync("14052356322");
+            _httpTest.ShouldHaveCalled("consulta").WithRequestBody("14052356322");
+        }
     }
 }
