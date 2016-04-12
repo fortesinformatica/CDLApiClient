@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Configuration;
+using System.Threading.Tasks;
 using Flurl.Http.Testing;
 using NUnit.Framework;
 
@@ -59,14 +60,14 @@ namespace CDLApiClient.Tests
         }
 
         [Test]
-        public async void ConsultaCpfCnpjAsyncDeveAutenticarPrimeiro()
+        public async Task ConsultaCpfCnpjAsyncDeveAutenticarPrimeiro()
         {
             await _sut.ConsultaCpfCnpjAsync("14052356322");
             _httpTest.ShouldHaveCalled("oauth/access_token").WithRequestBody($"grant_type=password&client_id={_clientId}&client_secret={_clientSecret}&username={_userName}&password={_password}");
         }
 
         [Test]
-        public async void ConsultaCpfCnpjAsyncDeveConsultarCpfCnpj()
+        public async Task ConsultaCpfCnpjAsyncDeveConsultarCpfCnpj()
         {
             await _sut.ConsultaCpfCnpjAsync("14052356322");
             _httpTest.ShouldHaveCalled("consulta").WithRequestBody("14052356322");
