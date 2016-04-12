@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using System.Threading.Tasks;
 
 namespace CDLApiClient
 {
@@ -6,5 +7,7 @@ namespace CDLApiClient
     {
         bool ConsultaCpfCnpj(string cpfCnpj, TimeSpan timeout);
         bool ConsultaCpfCnpj(string cpfCnpj);
+        Task<bool> ConsultaCpfCnpjAsync(string cpfCnpj, TimeSpan timeout);
+        Task<bool> ConsultaCpfCnpjAsync(string cpfCnpj);
     }
 }
