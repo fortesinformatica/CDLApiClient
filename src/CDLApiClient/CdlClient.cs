@@ -51,7 +51,7 @@ namespace CDLApiClient
                 .AppendPathSegment(CONSULTA_URL)
                 .WithOAuthBearerToken(autheticationResponse.AccessToken)
                 .WithTimeout(timeout)
-                .PostUrlEncodedAsync(cpfCnpj)
+                .PostUrlEncodedAsync(new { cnpjcpf = cpfCnpj })
                 .ReceiveJson<ConsultaResponse>();
 
             return consultaResponse.Status == "success";

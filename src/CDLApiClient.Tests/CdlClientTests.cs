@@ -71,7 +71,7 @@ namespace CDLApiClient.Tests
         public async Task ConsultaCpfCnpjAsyncDeveConsultarCpfCnpj()
         {
             await _sut.ConsultaCpfCnpjAsync(CPF_CNPJ);
-            _httpTest.ShouldHaveCalled("consulta").WithRequestBody(CPF_CNPJ);
+            _httpTest.ShouldHaveCalled("consulta").WithContentType("application/x-www-form-urlencoded").WithRequestBody($"cnpjcpf={CPF_CNPJ}");
         }
     }
 }
